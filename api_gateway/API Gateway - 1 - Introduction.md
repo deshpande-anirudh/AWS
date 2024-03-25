@@ -1,4 +1,4 @@
-##### What is an API? 
+## What is an API? 
 Introduction: In the world of software development, APIs play a crucial role in enabling communication between different systems. Let's break down the basics of APIs, starting from the ground up.
 
 What is an API? An API, or Application Programming Interface, acts as a middleman between software applications, allowing them to communicate and interact with each other. It provides a set of rules and protocols that define how different software components can work together.
@@ -11,7 +11,7 @@ API Routing: APIs intelligently route incoming requests based on predefined path
 
 Protocols for API Communication: APIs communicate using various protocols such as REST, SOAP, GraphQL, RPC, gRPC etc. These protocols define how data is exchanged between clients and services, ensuring interoperability and performance.
 
-![](images/intro/Screenshot 2024-03-20 at 11.14.42 AM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2011.14.42%20AM.png)
 
 Contract Between API and Client:
 The API defines a contract between itself and the client. This contract outlines the available endpoints, request and response formats, and any other relevant details. By adhering to this contract, both the API and the client can communicate effectively, regardless of the underlying changes to the services.
@@ -28,7 +28,7 @@ When it comes to communication protocols, there are several options available. A
 4. gRPC: gRPC is a modern, high-performance RPC (Remote Procedure Call) framework developed by Google. It uses HTTP/2 as its underlying protocol and Protocol Buffers for efficient serialization.
 
 APIG supports REST and WebSocket APIs. 
-#### Types of APIs
+## Types of APIs
 
 Amazon API Gateway offers different types of APIs, each serving specific purposes and utilizing various protocols. Understanding these API types is essential for effectively leveraging the capabilities of API Gateway. Let's delve into the nuances of Amazon API Gateway APIs and demystify their differences.
 
@@ -44,23 +44,23 @@ Contrary to its name, the HTTP API provided by Amazon API Gateway is also a REST
 Regional API:
 All APIs deployed using Amazon API Gateway are inherently regional, meaning they are spun up in specific AWS regions. The Regional API, supported by both REST and HTTP API types, allows applications and services within the same region to access the API endpoints. While primarily regional, these APIs can be accessed from outside the region, albeit with potentially longer latency.
 
-![](images/intro/Screenshot 2024-03-20 at 11.54.50 AM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2011.54.50%20AM.png)
 
 Edge-Optimized API:
 Exclusive to the REST API type, the Edge-Optimized API leverages CloudFront distribution to bring points of presence (POPs) closer to clients. This optimization enhances network performance by routing requests through Amazon's private network, reducing latency. However, it's essential to note that Edge-Optimized APIs do not include Edge-based caching, making them ideal for scenarios where caching is not feasible.
 
-![](images/intro/Screenshot 2024-03-20 at 11.55.42 AM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2011.55.42%20AM.png)
 
 Private API:
 The Private API offered by Amazon API Gateway is designed for restricted access within a Virtual Private Cloud (VPC). It ensures that API endpoints are only accessible to entities within the VPC, enhancing security and privacy. Private APIs are commonly used for internal communication and data exchange within organizations.
 
 Other AWS Services that the private API connects to should reside within the same VPC.
 
-![](images/intro/Screenshot 2024-03-20 at 11.56.15 AM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2011.56.15%20AM.png)
 
-##### Understanding RPS and Burst
+## Understanding RPS and Burst
 
-![](images/intro/Screenshot 2024-03-20 at 12.10.33 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2012.10.33 PM.png)
 
 Introduction:
 Amazon API Gateway introduces rate limiting features to manage incoming requests effectively. Understanding the concepts of Requests Per Second (RPS) and Burst is crucial for optimizing API performance and preventing throttling issues. Let's delve into these concepts and clarify their nuances.
@@ -86,55 +86,55 @@ To avoid misconfigurations and optimize API performance, adhere to the following
 Conclusion:
 Understanding the intricacies of RPS and Burst is essential for effectively managing rate limiting in Amazon API Gateway. By aligning Burst and RPS limits with expected workload characteristics and traffic patterns, developers can optimize API performance, prevent throttling issues, and ensure a seamless experience for API consumers.
 
-##### Api Gateway integrations
+## Api Gateway integrations
 
-###### Lambda function integration
+### Lambda function integration
 
 - **Standard Integration:** Provides granular control over request and response mapping for invoking Lambda functions.
 
-![](images/intro/Screenshot 2024-03-20 at 10.44.46 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.44.46%20PM.png)
 	- **Request and Response Mapping:** Allows developers to define transformation rules using Velocity Templating Language (VTL) to customize request and response payloads.
 	- **Flexibility:** Ideal for complex API scenarios requiring detailed data formatting and additional processing before Lambda invocation.
 	- **Compatibility:** Available exclusively for REST APIs in API Gateway, enabling fine-tuning of API logic and performance.
 	
-- ###### **Proxy Integration:**
+- ### **Proxy Integration:**
 
-![](images/intro/Screenshot 2024-03-20 at 10.44.14 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.44.14 PM.png)
 - **Purpose:** Passes the entire request to the Lambda function without any transformation.
 - **Request Handling:** API Gateway sends the raw request to the Lambda function's event parameter.
 - **Response Handling:** Lambda function must directly handle response headers, status codes, and body.
 - **Use Case:** Suitable for simple API scenarios where minimal processing is required and Lambda function handles all logic and response formatting.
 
-###### **AWS Service Integration:**
+### **AWS Service Integration:**
 
-![](images/intro/Screenshot 2024-03-20 at 10.46.11 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.46.11 PM.png)
 
 - **Purpose:** Allows API Gateway to directly integrate with AWS services like DynamoDB, S3, or Step Functions.
 - **Request Handling:** API Gateway forwards the request to the integrated AWS service.
 - **Response Handling:** The AWS service processes the request and sends back a response.
 - **Use Case:** Ideal for scenarios where direct interaction with AWS services is required, enabling seamless integration without intermediate processing logic.
 
-###### **HTTP Integration:**
+### **HTTP Integration:**
 
-![](images/intro/Screenshot 2024-03-20 at 10.46.46 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.46.46 PM.png)
 
 - **Purpose:** Enables API Gateway to integrate with HTTP endpoints outside of AWS, acting as a proxy.
 - **Request Handling:** API Gateway forwards incoming requests to the specified HTTP endpoint.
 - **Response Handling:** The external HTTP endpoint processes the request and returns a response to API Gateway.
 - **Use Case:** Useful for scenarios where API Gateway needs to communicate with external HTTP services, such as third-party APIs or legacy systems, providing a secure and controlled interface.
 
-###### **Mock Integration:**
+### **Mock Integration:**
 
-![](images/intro/Screenshot 2024-03-20 at 10.47.18 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.47.18 PM.png)
 
 - **Purpose:** Provides a simulated integration for API Gateway endpoints without actually connecting to a backend service.
 - **Request Handling:** API Gateway generates mock responses based on predefined templates or rules without sending requests to a backend.
 - **Response Handling:** Mock responses are generated and returned to the client based on predefined configurations.
 - **Use Case:** Ideal for testing API Gateway configurations, handling pre-flight requests, or simulating responses from backend services during development and testing phases.
 
-###### **Private Integration**:
+### **Private Integration**:
 
-![](images/intro/Screenshot 2024-03-20 at 10.47.52 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.47.52 PM.png)
 
 - **Purpose:** Enables API Gateway to securely connect to backend services within a Virtual Private Cloud (VPC).
 - **Connection:** Utilizes a VPC link and a network load balancer to establish a secure connection to backend resources.
@@ -142,13 +142,13 @@ Understanding the intricacies of RPS and Burst is essential for effectively mana
 - **Flexibility:** Supports connections to various backend resources, including ECS, EC2, and on-premises servers.
 - **HTTP API:** Offers similar capabilities, including direct connections to application load balancers and integration with AWS Cloud Map for container instances.
 
-##### **Authorization Simplification:**
+## **Authorization Simplification:**
 
 REST: 
-![](images/intro/Screenshot 2024-03-21 at 5.47.33 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%205.47.33%20AM.png)
 
 HTTP: 
-![](images/intro/Screenshot 2024-03-21 at 5.56.10 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%205.56.10%20AM.png)
 
 
 - **Authentication:** Refers to the process of verifying the identity of a user or entity accessing the system, typically achieved through various authentication mechanisms.
@@ -175,9 +175,9 @@ Simplify and optimize the authorization process within API Gateway to enhance se
 	- **REST:** Supports a range of authorization types, including those mentioned earlier, to accommodate diverse application needs and security requirements.
 	- **HTTP:** Enhances authorization capabilities by introducing JWT-based authentication, enabling token-based access control and validation for HTTP APIs.
 
-##### Caching
+## Caching
 
-![](images/intro/Screenshot 2024-03-21 at 6.01.02 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%206.01.02%20AM.png)
 
 - **Built-in Caching:**
 	- Amazon API Gateway offers its own caching mechanism.
@@ -209,9 +209,9 @@ Simplify and optimize the authorization process within API Gateway to enhance se
 	- Reduces latency and improves user experience.
 	- Ideal for scenarios requiring faster response times.
 
-##### Throttling
+## Throttling
 
-![](images/intro/Screenshot 2024-03-21 at 6.09.31 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%206.09.31%20AM.png)
 
 - **Importance of Throttling:**
 	- Throttling is crucial for managing API usage and preventing overloads.
@@ -249,9 +249,9 @@ Simplify and optimize the authorization process within API Gateway to enhance se
 	- Customizable throttling configurations offer flexibility and control over resource allocation.
 	- By implementing effective throttling strategies, organizations can ensure optimal API performance and user experience.
 
-##### Stages:
+## Stages:
 
-![](images/intro/Screenshot 2024-03-21 at 6.12.56 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%206.12.56%20AM.png)
 
 Different stages can point to different Lambda Aliases. It gets complex. Don't use stages unless you need to. 
 
@@ -259,13 +259,13 @@ Better practice:
 1. Use accounts per environment: Dev, Alpha, Beta, Gamma, Prod
 2. Use custom domains with custom base path mapping
 
-| ![](images/intro/Screenshot 2024-03-21 at 6.16.08 AM.png) | ![](images/intro/Screenshot 2024-03-21 at 6.18.28 AM.png) |
+| ![](images/intro/Screenshot%202024-03-21%20at%206.16.08%20AM.png) | ![](images/intro/Screenshot%202024-03-21%20at%206.18.28%20AM.png) |
 | -------------------------------------------- | -------------------------------------------- |
-| ![](images/intro/Screenshot 2024-03-21 at 6.20.41 AM.png) |                                              |
+| ![](images/intro/Screenshot%202024-03-21%20at%206.20.41%20AM.png) |                                              |
 
-##### Logging
+## Logging
 
-![](images/intro/Screenshot 2024-03-21 at 6.24.20 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%206.24.20%20AM.png)
 
 - **Importance of Logging:**
 	- Logging is essential for gaining insights into API performance and behavior.
@@ -296,9 +296,9 @@ Better practice:
 	- Encourage a culture of proactive monitoring and data-driven decision-making within the organization.
 	- Continuously optimize logging practices to extract maximum value and insights from logged data.
 
-##### Canary releases
+## Canary releases
 
-| ![](images/intro/Screenshot 2024-03-21 at 6.27.28 AM.png) | ![](images/intro/Screenshot 2024-03-21 at 6.28.00 AM.png) |
+| ![](images/intro/Screenshot%202024-03-21%20at%206.27.28%20AM.png) | ![](images/intro/Screenshot%202024-03-21%20at%206.28.00%20AM.png) |
 | -------------------------------------------- | -------------------------------------------- |
 |                                              |                                              |
 **Implementing Canary Releases in API Gateway**
@@ -330,7 +330,7 @@ Better practice:
 	5. Manually promote the canary stage to full production based on observed metrics and feedback.
 	6. Remove the canary stage once the changes are successfully deployed to production.
 
-##### Resource policies
+## Resource policies
 
 **Understanding Resource Policies in API Gateway**
 
@@ -358,11 +358,11 @@ Better practice:
 	- Utilize conditions to tailor access restrictions according to specific requirements, such as time-sensitive promotions or geographic limitations.
 	- Regularly review and update resource policies to align with evolving security needs and access control requirements.
 
-![](images/intro/Screenshot 2024-03-21 at 6.34.11 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%206.34.11%20AM.png)
 
-#### WAF Integration
+## WAF Integration
 
-![](images/intro/Screenshot 2024-03-21 at 6.38.14 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%206.38.14%20AM.png)
 
 - **Introduction to AWS WAF:**
 	- AWS Web Application Firewall (WAF) provides an additional layer of security for API Gateway endpoints by filtering and monitoring incoming traffic.
@@ -389,15 +389,15 @@ Better practice:
 	- Regularly review and update firewall rules to adapt to evolving security threats and compliance requirements.
 	- Leverage infrastructure as code (IaC) practices to automate the deployment and management of WAF configurations, ensuring consistency and scalability.
 
-##### Client certificates and mTLS
+## Client certificates and mTLS
 
-| ![](images/intro/Screenshot 2024-03-21 at 6.42.15 AM.png) | ![](images/intro/Screenshot 2024-03-21 at 6.41.56 AM.png) |
+| ![](images/intro/Screenshot%202024-03-21%20at%206.42.15%20AM.png) | ![](images/intro/Screenshot%202024-03-21%20at%206.41.56%20AM.png) |
 | -------------------------------------------- | -------------------------------------------- |
 |                                              |                                              |
 
-##### Swagger/OpenAPI 3 import and export
+## Swagger/OpenAPI 3 import and export
 
-![](images/intro/Screenshot 2024-03-21 at 6.44.04 AM.png)
+![](images/intro/Screenshot%202024-03-21%20at%206.44.04%20AM.png)
 
 - **Introduction to OpenAPI:**
 	- OpenAPI, formerly known as Swagger, is a widely adopted standard for defining RESTful APIs.
@@ -429,7 +429,7 @@ Better practice:
 	- By integrating OpenAPI with the API Gateway console, developers can streamline the API development process and ensure compatibility with industry standards.
 	- Leveraging OpenAPI enables agility, consistency, and ease of maintenance in building robust APIs on the AWS platform.
 
-##### Identity based policies
+## Identity based policies
 
 Reference: https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html
 
