@@ -60,7 +60,7 @@ Other AWS Services that the private API connects to should reside within the sam
 
 ## Understanding RPS and Burst
 
-![](images/intro/Screenshot%202024-03-20%20at%2012.10.33 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2012.10.33%20PM.png)
 
 Introduction:
 Amazon API Gateway introduces rate limiting features to manage incoming requests effectively. Understanding the concepts of Requests Per Second (RPS) and Burst is crucial for optimizing API performance and preventing throttling issues. Let's delve into these concepts and clarify their nuances.
@@ -99,7 +99,7 @@ Understanding the intricacies of RPS and Burst is essential for effectively mana
 	
 - ### **Proxy Integration:**
 
-![](images/intro/Screenshot%202024-03-20%20at%2010.44.14 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.44.14%20PM.png)
 - **Purpose:** Passes the entire request to the Lambda function without any transformation.
 - **Request Handling:** API Gateway sends the raw request to the Lambda function's event parameter.
 - **Response Handling:** Lambda function must directly handle response headers, status codes, and body.
@@ -107,7 +107,7 @@ Understanding the intricacies of RPS and Burst is essential for effectively mana
 
 ### **AWS Service Integration:**
 
-![](images/intro/Screenshot%202024-03-20%20at%2010.46.11 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.46.11%20PM.png)
 
 - **Purpose:** Allows API Gateway to directly integrate with AWS services like DynamoDB, S3, or Step Functions.
 - **Request Handling:** API Gateway forwards the request to the integrated AWS service.
@@ -116,7 +116,7 @@ Understanding the intricacies of RPS and Burst is essential for effectively mana
 
 ### **HTTP Integration:**
 
-![](images/intro/Screenshot%202024-03-20%20at%2010.46.46 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.46.46%20PM.png)
 
 - **Purpose:** Enables API Gateway to integrate with HTTP endpoints outside of AWS, acting as a proxy.
 - **Request Handling:** API Gateway forwards incoming requests to the specified HTTP endpoint.
@@ -125,7 +125,7 @@ Understanding the intricacies of RPS and Burst is essential for effectively mana
 
 ### **Mock Integration:**
 
-![](images/intro/Screenshot%202024-03-20%20at%2010.47.18 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.47.18%20PM.png)
 
 - **Purpose:** Provides a simulated integration for API Gateway endpoints without actually connecting to a backend service.
 - **Request Handling:** API Gateway generates mock responses based on predefined templates or rules without sending requests to a backend.
@@ -134,7 +134,7 @@ Understanding the intricacies of RPS and Burst is essential for effectively mana
 
 ### **Private Integration**:
 
-![](images/intro/Screenshot%202024-03-20%20at%2010.47.52 PM.png)
+![](images/intro/Screenshot%202024-03-20%20at%2010.47.52%20PM.png)
 
 - **Purpose:** Enables API Gateway to securely connect to backend services within a Virtual Private Cloud (VPC).
 - **Connection:** Utilizes a VPC link and a network load balancer to establish a secure connection to backend resources.
